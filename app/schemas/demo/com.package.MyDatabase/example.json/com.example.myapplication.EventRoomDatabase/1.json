@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a90fd86d3be59452ecddc928c2dfe7b3",
+    "entities": [
+      {
+        "tableName": "event_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`UID` INTEGER NOT NULL, `Title` TEXT, `GameTime` TEXT, `GameDate` TEXT, `Address` TEXT, `GameName` TEXT, PRIMARY KEY(`UID`))",
+        "fields": [
+          {
+            "fieldPath": "_UID",
+            "columnName": "UID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Name",
+            "columnName": "Title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "GameTime",
+            "columnName": "GameTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "GameDate",
+            "columnName": "GameDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Address",
+            "columnName": "Address",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "GameName",
+            "columnName": "GameName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "UID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a90fd86d3be59452ecddc928c2dfe7b3')"
+    ]
+  }
+}
